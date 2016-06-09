@@ -1,0 +1,35 @@
+GETPAID REQUEST PARAMETERS
+url:	api/checkout/
+json encoded woocommerce parameters hashed with oauth parameters
+woocommerce parameters
+* total     
+* reference     
+* first_name
+* name
+* email
+* phone
+{
+total":1,
+"reference":543,
+"first_name":"samwise",
+"last_name":"frodo",
+"email":"admin@geeks.co.ke",
+"phone":"254722221992"
+}
+oauth Parameters
+* Oauth callback
+* Consumer key
+* Nonce
+* Timestamp
+* Signature method
+* version
+* Oauth token
+
+sample url
+"http://159.203.84.166/api/checkout/?getpaid_request_data=%7B%22total%22%3A1%2C%22reference%22%3A543%2C%22first_name%22%3A%22Samwise%22%2C%22last_name%22%3A%22frodo%22%2C%22email%22%3A%22samsonnjogu%40gmail.com%22%2C%22phone%22%3A%220717768380%22%7D&amp;oauth_callback=http%3A%2F%2Fgeeks.co.ke%2Ftest%2Findex.php%2Fcheckout-2%2F%3Forder%3D543%26key%3Dwc_order_57596fdebe593&amp;oauth_consumer_key=JUVVS&amp;oauth_nonce=%7BEB9F708A-038A-49BA-E70E-F9D0108E13B1%7D&amp;oauth_signature=JY9UKluH9sFNkWYUfO6DFlGs0i4%3D&amp;oauth_signature_method=HMAC-SHA1&amp;oauth_timestamp=1465479136&amp;oauth_token=00c3b773f220478a8a9302646ae1554b&amp;oauth_version=1.0"
+
+url: 	'api/QueryPaymentStatus/
+
+url:	$api.'API/QueryPaymentStatusByMerchantRef'
+url:	'api/QueryPaymentDetails'
+

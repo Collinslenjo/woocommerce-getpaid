@@ -374,12 +374,12 @@ function woocommerce_gp_getpaid_init(){
 
     function create_url($order_id){
       $order            = &new WC_Order( $order_id );
-      $order_xml        = $this->getpaid_xml($order_id);
+      $order_json        = $this->getpaid_json($order_id);
       $callback_url     = add_query_arg('key', $order->order_key, add_query_arg('order', $order_id, get_permalink(woocommerce_get_page_id('pay'))));
 
       $url = OAuthRequest::from_consumer_and_token($this->consumer, $this->token, "GET", $this->gatewayURL, $this->params);
       $url->set_parameter("oauth_callback", $callback_url);
-      $url->set_parameter("getpaid_request_data", $order_xml);
+      $url->set_parameter("getpaid_request_data", $order_json);
       $url->set_parameter("oauth_token", $this->token);
 
       $url->sign_request($this->signature_method, $this->consumer, $this->token);
@@ -388,7 +388,7 @@ function woocommerce_gp_getpaid_init(){
       return $url;
     }
 
-    function getpaid_xml($order_id) {
+    function getpaid_json($order_id) {
           
           $order                      = &new WC_Order( $order_id );
           $getpaid_args['total']      = $order->get_total();
