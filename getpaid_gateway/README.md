@@ -2,7 +2,7 @@
 
 > Simple and easy to use plugin for getpaid.com payment gateway.
 
-** Please raise any issues though github, thanks. **
+**Please raise any issues though github, thanks**
 
 
 
